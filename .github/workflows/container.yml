@@ -20,4 +20,12 @@ jobs:
            run: curl http://localhost:3001/api/users
 
 
+         - uses: actions/checkout@v1
+         - name: Run a scropt
+           uses: docker://node:12.14.1-alpine3.10
+           with:
+              entrypoint: ./script.sh
+              args: "test"
+
+
 
